@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, MessageCircle, PenTool, Shield, Users, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-bg.jpg";
 
 const Index = () => {
@@ -43,10 +44,12 @@ const Index = () => {
             Connect with an AI companion that understands you, and journal your thoughts in a safe, supportive space. Take the first step towards better mental health today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
-            <Button variant="hero" size="xl" className="shadow-glow">
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Start Chatting
-            </Button>
+            <Link to="/chat">
+              <Button variant="hero" size="xl" className="shadow-glow">
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Start Chatting
+              </Button>
+            </Link>
             <Button variant="wellness" size="xl">
               <PenTool className="mr-2 h-5 w-5" />
               Begin Journaling
