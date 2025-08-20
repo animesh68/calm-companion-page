@@ -50,10 +50,12 @@ const Index = () => {
                 Start Chatting
               </Button>
             </Link>
-            <Button variant="wellness" size="xl">
-              <PenTool className="mr-2 h-5 w-5" />
-              Begin Journaling
-            </Button>
+            <Link to="/journal">
+              <Button variant="wellness" size="xl">
+                <PenTool className="mr-2 h-5 w-5" />
+                Begin Journaling
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
