@@ -58,6 +58,16 @@ export default {
 					purple: 'hsl(var(--wellness-purple))',
 					green: 'hsl(var(--wellness-green))'
 				},
+				notebook: {
+					paper: 'hsl(var(--notebook-paper))',
+					lines: 'hsl(var(--notebook-lines))',
+					leather: 'hsl(var(--leather-brown))',
+					vintage: 'hsl(var(--vintage-yellow))'
+				},
+				ink: {
+					blue: 'hsl(var(--ink-blue))',
+					black: 'hsl(var(--ink-black))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -72,12 +82,19 @@ export default {
 			backgroundImage: {
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-card': 'var(--gradient-card)',
-				'gradient-subtle': 'var(--gradient-subtle)'
+				'gradient-subtle': 'var(--gradient-subtle)',
+				'gradient-notebook': 'var(--gradient-notebook)'
 			},
 			boxShadow: {
 				'soft': 'var(--shadow-soft)',
 				'glow': 'var(--shadow-glow)',
-				'card': 'var(--shadow-card)'
+				'card': 'var(--shadow-card)',
+				'notebook': 'var(--shadow-notebook)'
+			},
+			fontFamily: {
+				sans: ["Inter", "sans-serif"],
+				handwriting: ["Caveat", "cursive"],
+				journal: ["Kalam", "cursive"],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
