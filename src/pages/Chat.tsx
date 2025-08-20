@@ -16,7 +16,7 @@ const Chat = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "welcome",
-      text: "Hello! I'm your CalmCompanion AI. I'm here to listen and provide emotional support. How are you feeling today?",
+      text: "Hello! I'm your I'll be there for you AI. I'm here to listen and provide emotional support. How are you feeling today?",
       isUser: false,
       timestamp: new Date(),
     },
@@ -154,7 +154,7 @@ const Chat = () => {
               </Link>
               <div className="flex items-center gap-2">
                 <Heart className="h-6 w-6 text-wellness-purple" />
-                <span className="text-lg font-semibold text-foreground">CalmCompanion AI</span>
+                <span className="text-lg font-semibold text-foreground">I'll be there for you AI</span>
               </div>
             </div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">

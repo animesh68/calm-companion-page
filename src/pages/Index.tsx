@@ -12,7 +12,7 @@ const Index = () => {
         <nav className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Heart className="h-8 w-8 text-wellness-purple" />
-            <span className="text-2xl font-bold text-foreground">CalmCompanion</span>
+            <span className="text-2xl font-bold text-foreground">I'll be there for you</span>
           </div>
           <div className="flex items-center gap-4">
             <Button variant="ghost">About</Button>
@@ -153,7 +153,7 @@ const Index = () => {
             Ready to Start Your Wellness Journey?
           </h2>
           <p className="mb-8 text-xl text-white/90 max-w-2xl mx-auto">
-            Join thousands of people who are already improving their mental health with CalmCompanion.
+            Join thousands of people who are already improving their mental health with I'll be there for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="outline" size="xl" className="bg-white text-primary border-white hover:bg-white/90">
@@ -172,7 +172,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
               <Heart className="h-6 w-6 text-wellness-purple" />
-              <span className="text-lg font-semibold text-foreground">CalmCompanion</span>
+              <span className="text-lg font-semibold text-foreground">I'll be there for you</span>
             </div>
             <div className="flex items-center gap-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
@@ -181,7 +181,7 @@ const Index = () => {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-            <p>© 2024 CalmCompanion. Your mental health matters.</p>
+            <p>© 2024 I'll be there for you. Your mental health matters.</p>
           </div>
         </div>
       </footer>
