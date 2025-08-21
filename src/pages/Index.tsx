@@ -229,22 +229,37 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero">
+      {/* Demo Site Notice */}
+      <section className="py-16 bg-muted/50 border-y">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="mb-6 text-4xl font-bold text-white">
-            Ready to Start Your Wellness Journey?
-          </h2>
-          <p className="mb-8 text-xl text-white/90 max-w-2xl mx-auto">
-            Join thousands of people who are already improving their mental health with I'll be there for you.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="outline" size="xl" className="bg-white text-primary border-white hover:bg-white/90">
-              Try Free for 7 Days
-            </Button>
-            <Button variant="ghost" size="xl" className="text-white border-white/30 hover:bg-white/10">
-              Learn More
-            </Button>
+          <div className="max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Zap className="h-4 w-4" />
+              Demo Site
+            </div>
+            <h2 className="mb-6 text-3xl font-bold text-foreground">
+              Experience Our Mental Wellness Platform
+            </h2>
+            <p className="mb-8 text-lg text-muted-foreground">
+              This is a demonstration version of "I'll be there for you". Feel free to explore the chat feature, try journaling, and sign up with demo credentials. All interactions are simulated for showcase purposes.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6 text-left">
+              <div className="p-4 bg-card border rounded-lg">
+                <MessageCircle className="h-8 w-8 text-wellness-blue mb-3" />
+                <h3 className="font-semibold mb-2">AI Chat Demo</h3>
+                <p className="text-sm text-muted-foreground">Try conversing with our AI companion</p>
+              </div>
+              <div className="p-4 bg-card border rounded-lg">
+                <PenTool className="h-8 w-8 text-wellness-green mb-3" />
+                <h3 className="font-semibold mb-2">Journal Experience</h3>
+                <p className="text-sm text-muted-foreground">Explore our beautiful journaling interface</p>
+              </div>
+              <div className="p-4 bg-card border rounded-lg">
+                <Users className="h-8 w-8 text-wellness-purple mb-3" />
+                <h3 className="font-semibold mb-2">Demo Sign Up</h3>
+                <p className="text-sm text-muted-foreground">Test the sign up flow with any credentials</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
