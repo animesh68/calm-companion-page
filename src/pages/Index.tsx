@@ -1,10 +1,42 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Heart, MessageCircle, PenTool, Shield, Users, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import heroImage from "@/assets/hero-bg.jpg";
 
 const Index = () => {
+  const [user, setUser] = useState<{ name: string; email: string } | null>(null);
+  const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+  const [signUpForm, setSignUpForm] = useState({ name: "", email: "" });
+
+  // Load user from localStorage on component mount
+  useEffect(() => {
+    const savedUser = localStorage.getItem("demoUser");
+    if (savedUser) {
+      setUser(JSON.parse(savedUser));
+    }
+  }, []);
+
+  const handleSignUp = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (signUpForm.name && signUpForm.email) {
+      const newUser = { name: signUpForm.name, email: signUpForm.email };
+      setUser(newUser);
+      localStorage.setItem("demoUser", JSON.stringify(newUser));
+      setIsSignUpOpen(false);
+      setSignUpForm({ name: "", email: "" });
+    }
+  };
+
+  const handleSignOut = () => {
+    setUser(null);
+    localStorage.removeItem("demoUser");
+  };
+
   return (
     <div className="min-h-screen bg-gradient-subtle">
       {/* Header */}
@@ -17,8 +49,57 @@ const Index = () => {
           <div className="flex items-center gap-4">
             <Button variant="ghost">About</Button>
             <Button variant="ghost">Features</Button>
-            <Button variant="outline">Sign In</Button>
-            <Button variant="hero">Get Started</Button>
+            {user ? (
+              <div className="flex items-center gap-4">
+                <span className="text-foreground font-medium">Welcome, {user.name}!</span>
+                <Button variant="outline" onClick={handleSignOut}>Sign Out</Button>
+              </div>
+            ) : (
+              <>
+                <Dialog open={isSignUpOpen} onOpenChange={setIsSignUpOpen}>
+                  <DialogTrigger asChild>
+                    <Button variant="outline">Sign In</Button>
+                  </DialogTrigger>
+                  <DialogTrigger asChild>
+                    <Button variant="hero">Get Started</Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-md">
+                    <DialogHeader>
+                      <DialogTitle>Welcome to I'll be there for you</DialogTitle>
+                      <DialogDescription>
+                        Enter your details to get started with your wellness journey.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <form onSubmit={handleSignUp} className="space-y-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="name">Full Name</Label>
+                        <Input
+                          id="name"
+                          placeholder="Enter your full name"
+                          value={signUpForm.name}
+                          onChange={(e) => setSignUpForm(prev => ({ ...prev, name: e.target.value }))}
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="email">Email</Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="Enter your email"
+                          value={signUpForm.email}
+                          onChange={(e) => setSignUpForm(prev => ({ ...prev, email: e.target.value }))}
+                          required
+                        />
+                      </div>
+                      <Button type="submit" className="w-full" variant="hero">
+                        Get Started
+                      </Button>
+                    </form>
+                  </DialogContent>
+                </Dialog>
+              </>
+            )}
           </div>
         </nav>
       </header>
